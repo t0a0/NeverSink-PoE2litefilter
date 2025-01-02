@@ -180,6 +180,14 @@ SetFontSize 35
 MinimapIcon 2 Cyan Diamond
 PlayEffect Cyan Temp
 
+# Chancing bases
+Show 
+Rarity Normal
+BaseType == "Sapphire Ring" "Stellar Amulet" "Heavy Belt"
+SetBorderColor 0 240 190
+SetFontSize 40
+MinimapIcon 2 Cyan Diamond
+
 # Special A Tier - Sanctum Relics
 Show 
 Class "Relic"
@@ -257,7 +265,7 @@ SetFontSize 40
 # Currency Tier B: Regal, Vaal ...
 Show
 Class "Currency"
-BaseType "Gemcutter's Prism" "Vaal Orb" "Chaos Orb" "Lesser Jeweller's Orb" "Regal Orb" "Artificer's Orb" "Glassblower's Bauble" "Orb of Alchemy"
+BaseType "Gemcutter's Prism" "Vaal Orb" "Chaos Orb" "Lesser Jeweller's Orb" "Regal Orb" "Artificer's Orb" "Glassblower's Bauble" "Orb of Alchemy" "Chance Shard"
 SetTextColor 255 207 132
 SetBorderColor 255 207 132
 SetBackgroundColor 76 51 12
@@ -303,14 +311,14 @@ SetFontSize 40
 Show
 AreaLevel >= 70
 Class "Currency"
-BaseType "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation" "Regal Shard" "Chance Shard"
+BaseType "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation" "Regal Shard"
 SetTextColor 220 190 132
 SetFontSize 35
 
 # Currency Tier C: Vaal, Chaos, Exalt, Exotic
 Show
 Class "Currency"
-BaseType "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation" "Regal Shard" "Chance Shard"
+BaseType "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation" "Regal Shard"
 SetTextColor 220 190 132
 MinimapIcon 2 Grey Circle
 SetFontSize 35
