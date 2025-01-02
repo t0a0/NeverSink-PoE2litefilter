@@ -71,6 +71,7 @@ BaseType == "Gold"
 SetTextColor 255 255 255
 SetBorderColor 255 255 255
 PlayEffect Orange Temp
+MinimapIcon 2 White Cross
 
 Show
 AreaLevel < 70
@@ -79,12 +80,14 @@ BaseType == "Gold"
 SetTextColor 255 255 255
 SetBorderColor 255 255 255
 PlayEffect Orange Temp
+MinimapIcon 2 White Cross
 
 Show
 BaseType == "Gold"
 SetTextColor 180 180 180
 SetBorderColor 0 0 0 255
 SetBackgroundColor 0 0 0 180
+MinimapIcon 2 Grey Cross
 
 #--------------------------
 # Uncut Gems
@@ -439,8 +442,18 @@ MinimapIcon 1 Yellow Diamond
 
 Show
 Rarity Normal
-Class "Rings" "Amulets" "Belts"
+Class "Rings" "Amulets"
 SetFontSize 40
+
+Show
+Rarity Normal
+Class "Belts"
+AreaLevel < 65
+SetFontSize 35
+
+Show
+Rarity Normal
+Class "Belts"
 
 Show
 Class "Rings" "Amulets" "Belts"
@@ -508,7 +521,7 @@ Rarity <= Magic
 Hide
 AreaLevel >= 78
 Rarity <= Magic
-Class "Helmets" "Boots" "Gloves" "Shields" "Foci" "One Hand Maces" "Two Hand Maces" "Quarterstaves" "Bows" "Crossbows" "Body Armours"
+Class "Helmets" "Boots" "Gloves" "Shields" "Foci" "One Hand Maces" "Two Hand Maces" "Quarterstaves" "Bows" "Crossbows" "Body Armours" "Wands" "Sceptres" "Staves" "Quivers"
 
 Hide
 AreaLevel >= 78
