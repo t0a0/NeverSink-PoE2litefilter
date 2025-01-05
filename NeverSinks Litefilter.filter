@@ -82,8 +82,6 @@ StackSize >= 1000
 BaseType == "Gold"
 SetTextColor 255 255 255
 SetBorderColor 255 255 255
-PlayEffect Orange Temp
-MinimapIcon 2 White Cross
 
 Show
 AreaLevel < 70
@@ -91,19 +89,26 @@ StackSize >= 500
 BaseType == "Gold"
 SetTextColor 255 255 255
 SetBorderColor 255 255 255
-PlayEffect Orange Temp
-MinimapIcon 2 White Cross
 
 Show
 BaseType == "Gold"
 SetTextColor 180 180 180
 SetBorderColor 0 0 0 255
 SetBackgroundColor 0 0 0 180
-MinimapIcon 2 Grey Cross
+
 
 #--------------------------
 # Uncut Gems
 #--------------------------
+
+Hide
+ItemLevel <= 18
+BaseType "Uncut Skill Gem" "Uncut Spirit Gem"
+AreaLevel >= 78
+
+Hide
+BaseType "Uncut Support Gem"
+AreaLevel >= 78
 
 # Level 20 gems go tink
 Show
@@ -236,10 +241,16 @@ PlayEffect Cyan
 PlayAlertSound 2 300
 
 # Special B Tier - Any Runes and Charms
+
 Show 
 BaseType " Rune" " Charm"
+AreaLevel < 70
 SetTextColor 0 240 190
 PlayEffect Cyan Temp
+
+Hide 
+BaseType " Rune" " Charm"
+AreaLevel >= 70
 
 #--------------------------
 # Scroll of Wisdom High Level Hiding
@@ -334,10 +345,14 @@ MinimapIcon 2 White Circle
 SetFontSize 40
 
 # Currency Tier C: Vaal, Chaos, Exalt, Exotic
+Hide
+AreaLevel >= 70
+BaseType "Orb of Augmentation" "Orb of Transmutation" "Regal Shard"
+
 Show
 AreaLevel >= 70
 Class "Currency"
-BaseType "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone" "Orb of Augmentation" "Orb of Transmutation" "Regal Shard"
+BaseType "Arcanist's Etcher" "Armourer's Scrap" "Blacksmith's Whetstone"
 SetTextColor 220 190 132
 SetFontSize 35
 
@@ -383,6 +398,15 @@ PlayEffect Purple
 MinimapIcon 1 Purple Square
 SetFontSize 45
 
+Hide
+AreaLevel >= 75
+BaseType "Barya" "Ultimatum"
+
+# Hide irradiated tablets
+Hide
+AreaLevel >= 75
+BaseType == "Precursor Tablet"
+
 Show
 Class "Tablet"
 SetTextColor 255 207 255
@@ -392,6 +416,10 @@ PlayAlertSound 2 300
 PlayEffect Purple
 MinimapIcon 1 Purple Square
 SetFontSize 45
+
+Hide
+AreaLevel >= 75
+BaseType "Barya" "Ultimatum"
 
 Show
 BaseType "Barya" "Ultimatum"
@@ -406,6 +434,12 @@ SetFontSize 40
 #--------------------------
 # Waystones
 #--------------------------
+
+Hide
+WaystoneTier < 13
+AreaLevel >= 78
+BaseType "Waystone"
+Rarity <= Rare
 
 Show
 WaystoneTier < 10
@@ -449,68 +483,21 @@ PlayEffect Yellow
 MinimapIcon 1 Yellow Diamond
 
 #--------------------------
-# Rings, Amulets, Belts
-#--------------------------
-
-Show
-Rarity Normal
-Class "Rings" "Amulets"
-SetFontSize 40
-
-Show
-Rarity Normal
-Class "Belts"
-AreaLevel < 65
-SetFontSize 35
-
-Show
-Rarity Normal
-Class "Belts"
-
-Show
-Class "Rings" "Amulets" "Belts"
-Rarity Magic
-SetFontSize 40
-
-#--------------------------
-# Salvagable Items
-#--------------------------
-
-Show
-Sockets > 0
-Rarity Normal
-SetBorderColor 200 200 200
-SetFontSize 35
-
-Show
-Quality > 0
-Rarity Normal
-SetBorderColor 200 200 200
-SetFontSize 35
-
-Show
-Sockets > 0
-Rarity Magic
-SetBorderColor 0 0 200
-SetFontSize 35
-
-Show
-Quality > 0
-Rarity Magic
-SetBorderColor 0 0 200
-SetFontSize 35
-
-#--------------------------
 # Random Rares
 #--------------------------
 
 ## Uncomment this rule to hide low level rares in high level zones
 
-# Hide
-# Rarity Rare
-# DropLevel < 50
-# AreaLevel > 72
-# SetFontSize 35
+Hide
+Rarity Rare
+DropLevel < 50
+AreaLevel > 72
+SetFontSize 35
+
+Hide
+BaseType "Advanced "
+AreaLevel > 72
+Rarity Rare
 
 Show
 Rarity Rare
@@ -526,9 +513,9 @@ AreaLevel > 70
 Rarity <= Magic
 Class "Flasks"
 
-Show
-BaseType == "Amethyst Ring" "Attuned Wand" "Breach Ring" "Chiming Staff" "Expert Altar Robe" "Expert Barrier Quarterstaff" "Expert Bombard Crossbow" "Expert Brigand Mace" "Expert Cloaked Mail" "Expert Construct Hammer" "Expert Crumbling Maul" "Expert Doubled Gauntlets" "Expert Dualstring Bow" "Expert Dyad Crossbow" "Expert Edged Buckler" "Expert Elite Greathelm" "Expert Feathered Sandals" "Expert Feathered Targe" "Expert Feathered Tiara" "Expert Forlorn Crossbow" "Expert Goldcast Cuffs" "Expert Heavy Crown" "Expert Hexer's Robe" "Expert Hunter Hood" "Expert Hunting Shoes" "Expert Intricate Gloves" "Expert Iron Cuirass" "Expert Keth Raiment" "Expert Leaden Greathammer" "Expert Lizardscale Boots" "Expert Moulded Mitts" "Expert Oak Greathammer" "Expert Omen Crest Shield" "Expert Pathfinder Coat" "Expert Pelt Leggings" "Expert Pelt Mantle" "Expert Plumed Focus" "Expert Rogue Armour" "Expert Sacrificial Mantle" "Expert Scale Mail" "Expert Scalper's Jacket" "Expert Serpentscale Coat" "Expert Shaman Mantle" "Expert Shielded Helm" "Expert Slicing Quarterstaff" "Expert Spined Bracers" "Expert Spiral Wraps" "Expert Stacked Sabatons" "Expert Steel Plate" "Expert Stone Greaves" "Expert Stone Tower Shield" "Expert Studded Vest" "Expert Tribal Mask" "Expert Vaal Cuirass" "Expert Warpick" "Expert Waxed Jacket" "Expert Wayfarer Jacket" "Expert Zealot Bow" "Omen Sceptre" "Plate Belt" "Primed Quiver" "Prismatic Ring" "Rattling Sceptre" "Siphoning Wand" "Solar Amulet" "Voltaic Staff"
-Rarity <= Magic
+# Show
+# BaseType == "Amethyst Ring" "Attuned Wand" "Breach Ring" "Chiming Staff" "Expert Altar Robe" "Expert Barrier Quarterstaff" "Expert Bombard Crossbow" "Expert Brigand Mace" "Expert Cloaked Mail" "Expert Construct Hammer" "Expert Crumbling Maul" "Expert Doubled Gauntlets" "Expert Dualstring Bow" "Expert Dyad Crossbow" "Expert Edged Buckler" "Expert Elite Greathelm" "Expert Feathered Sandals" "Expert Feathered Targe" "Expert Feathered Tiara" "Expert Forlorn Crossbow" "Expert Goldcast Cuffs" "Expert Heavy Crown" "Expert Hexer's Robe" "Expert Hunter Hood" "Expert Hunting Shoes" "Expert Intricate Gloves" "Expert Iron Cuirass" "Expert Keth Raiment" "Expert Leaden Greathammer" "Expert Lizardscale Boots" "Expert Moulded Mitts" "Expert Oak Greathammer" "Expert Omen Crest Shield" "Expert Pathfinder Coat" "Expert Pelt Leggings" "Expert Pelt Mantle" "Expert Plumed Focus" "Expert Rogue Armour" "Expert Sacrificial Mantle" "Expert Scale Mail" "Expert Scalper's Jacket" "Expert Serpentscale Coat" "Expert Shaman Mantle" "Expert Shielded Helm" "Expert Slicing Quarterstaff" "Expert Spined Bracers" "Expert Spiral Wraps" "Expert Stacked Sabatons" "Expert Steel Plate" "Expert Stone Greaves" "Expert Stone Tower Shield" "Expert Studded Vest" "Expert Tribal Mask" "Expert Vaal Cuirass" "Expert Warpick" "Expert Waxed Jacket" "Expert Wayfarer Jacket" "Expert Zealot Bow" "Omen Sceptre" "Plate Belt" "Primed Quiver" "Prismatic Ring" "Rattling Sceptre" "Siphoning Wand" "Solar Amulet" "Voltaic Staff"
+# Rarity <= Magic
 
 Hide
 AreaLevel >= 78
@@ -580,10 +567,10 @@ Class "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One 
 ### OPTIONAL RULE: Hide random bases
 # REMOVE THE BASES YOU --DO-- WANT TO SEE BEFORE SETTING TO HIDE
 
-# Hide
-# Rarity <= Magic
-# Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres"
-# AreaLevel >= 65
+Hide
+Rarity <= Magic
+Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres" "Belts"
+AreaLevel >= 65
 
 ### OPTIONAL RULE: REDUCES BACKGROUND ON LOW LEVEL BASES
 
