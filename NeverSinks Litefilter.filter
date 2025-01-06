@@ -214,10 +214,14 @@ PlayEffect Cyan Temp
 # Chancing bases
 Show 
 Rarity Normal
-BaseType == "Sapphire Ring" "Stellar Amulet" "Heavy Belt"
-SetBorderColor 0 240 190
-SetFontSize 40
-MinimapIcon 2 Cyan Diamond
+BaseType == "Stellar Amulet"
+SetFontSize 45
+SetTextColor 255 0 0 255
+SetBorderColor 255 0 0 255
+SetBackgroundColor 255 255 255 255
+PlayAlertSound 6 300
+PlayEffect Red
+MinimapIcon 0 Red Star
 
 # Special A Tier - Sanctum Relics
 Show 
@@ -247,6 +251,16 @@ BaseType " Rune" " Charm"
 AreaLevel < 70
 SetTextColor 0 240 190
 PlayEffect Cyan Temp
+
+Show
+BaseType == "Golden Charm"
+SetFontSize 45
+SetTextColor 255 0 0 255
+SetBorderColor 255 0 0 255
+SetBackgroundColor 255 255 255 255
+PlayAlertSound 6 300
+PlayEffect Red
+MinimapIcon 0 Red Star
 
 Hide 
 BaseType " Rune" " Charm"
@@ -436,7 +450,7 @@ SetFontSize 40
 #--------------------------
 
 Hide
-WaystoneTier < 13
+WaystoneTier < 14
 AreaLevel >= 78
 BaseType "Waystone"
 Rarity <= Rare
@@ -496,6 +510,11 @@ SetFontSize 35
 
 Hide
 BaseType "Advanced "
+AreaLevel > 72
+Rarity Rare
+
+Hide
+Class "Shields" "One Hand Maces" "Two Hand Maces" "Quarterstaves" "Bows" "Crossbows" "Sceptres"
 AreaLevel > 72
 Rarity Rare
 
@@ -569,7 +588,7 @@ Class "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One 
 
 Hide
 Rarity <= Magic
-Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres" "Belts"
+Class "Flasks" "Body Armours" "Helmets" "Boots" "Gloves" "Shields" "Foci" "Quivers" "One Hand Maces" "Two Hand Maces" "Staves" "Quarterstaves" "Bows" "Crossbows" "Wands" "Sceptres" "Belts" "Rings" "Belts" "Amulets"
 AreaLevel >= 65
 
 ### OPTIONAL RULE: REDUCES BACKGROUND ON LOW LEVEL BASES
