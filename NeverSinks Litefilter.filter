@@ -76,6 +76,10 @@ MinimapIcon 0 Red Star
 # Gold
 #--------------------------
 
+Hide
+StackSize < 500
+BaseType == "Gold"
+
 Show
 AreaLevel >= 70
 StackSize >= 1000
